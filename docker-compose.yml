@@ -11,6 +11,7 @@ services:
       - ASPNETCORE_ENVIRONMENT=Production
       - ASPNETCORE_URLS=http://+:8080
       - BaseUrl=https://dayz-promo.ru
+      - ConnectionStrings__DefaultConnection=Host=promocodes.database;Port=5432;Database=promocodes;Username=postgres;Password=postgres;Include Error Detail=true
     extra_hosts:
       - "host.docker.internal:host-gateway"
     expose:
