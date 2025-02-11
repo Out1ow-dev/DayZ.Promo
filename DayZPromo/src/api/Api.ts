@@ -41,6 +41,7 @@ export class Client {
             headers: {
                 ...options.headers,
                 'Content-Type': 'application/json',
+                'Accept': 'application/json',
             }
         });
     }

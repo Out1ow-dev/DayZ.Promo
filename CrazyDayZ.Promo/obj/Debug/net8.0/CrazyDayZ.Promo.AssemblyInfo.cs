@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CrazyDayZ.Promo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b6ce3fb1dad4b0e51cfbf5c85ff22a2cd4e07b03")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ce6d2f0bfc5e6bf2d557ec560429c5bd480c64d1")]
 [assembly: System.Reflection.AssemblyProductAttribute("CrazyDayZ.Promo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CrazyDayZ.Promo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -69,6 +69,10 @@ namespace CrazyDayZ.Promo.Controllers
 
                     await _signInManager.SignInAsync(user, isPersistent: true);
 
+                    // Добавляем заголовки CORS в ответ
+                    Response.Headers.Add("Access-Control-Allow-Credentials", "true");
+                    Response.Headers.Add("Access-Control-Allow-Origin", Request.Headers["Origin"]);
+
                     return Ok(new
                     {
                         Message = "User logged in successfully!",
