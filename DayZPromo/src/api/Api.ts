@@ -24,7 +24,7 @@ export class Client {
     protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
 
     constructor(http?: { fetch(url: RequestInfo, init?: RequestInit): Promise<Response> }) {
-        const baseUrl = import.meta.env.VITE_BASE_URL || 'http://89.104.69.217';
+        const baseUrl = import.meta.env.VITE_BASE_URL || 'https://dayz-promo.ru';
         this.baseUrl = `${baseUrl}/api`;
         this.http = http || window as any;
     }
