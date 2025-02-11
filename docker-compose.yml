@@ -11,13 +11,15 @@ services:
       - ASPNETCORE_ENVIRONMENT=Production
       - ASPNETCORE_URLS=http://+:8080
       - BaseUrl=http://89.104.69.217
+      - ConnectionStrings__DefaultConnection=Host=promocodes.database;Port=5432;Database=promocodes;Username=postgres;Password=postgres
     expose:
       - "8080"
     networks:
       - app-network
     restart: always
     depends_on:
-      - promocodes.database
+      promocodes.database:
+        condition: service_healthy
     volumes:
       - ./CrazyDayZ.Promo/wwwroot:/app/wwwroot
     user: "0:0"
@@ -71,6 +73,11 @@ services:
     networks:
       - app-network
     restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
 
 networks:
   app-network:
