@@ -24,10 +24,10 @@ public class Program
         builder.Services.AddIdentity<User, IdentityRole>(options =>
         {
             options.User.RequireUniqueEmail = false;
-            options.Password.RequireDigit = true; 
-            options.Password.RequiredLength = 6; 
-            options.Password.RequireNonAlphanumeric = false; 
-            options.Password.RequireUppercase = false; 
+            options.Password.RequireDigit = true;
+            options.Password.RequiredLength = 6;
+            options.Password.RequireNonAlphanumeric = false;
+            options.Password.RequireUppercase = false;
         })
         .AddEntityFrameworkStores<DbContext>()
         .AddDefaultTokenProviders();
@@ -76,13 +76,7 @@ public class Program
             });
         });
 
-        builder.Services.AddAuthentication(options =>
-        {
-            options.DefaultAuthenticateScheme = IdentityConstants.ApplicationScheme;
-            options.DefaultChallengeScheme = IdentityConstants.ApplicationScheme;
-            options.DefaultSignInScheme = IdentityConstants.ApplicationScheme;
-        })
-        .AddCookie(IdentityConstants.ApplicationScheme, options =>
+        builder.Services.ConfigureApplicationCookie(options =>
         {
             options.Cookie.Name = ".AspNetCore.Identity.Application";
             options.Cookie.HttpOnly = true;
