@@ -19,7 +19,7 @@ export default defineConfig({
   },
   define: {
     'process.env.VITE_API_URL': JSON.stringify('/api'),
-    'process.env.VITE_BASE_URL': JSON.stringify('http://89.104.69.217')
+    'process.env.VITE_BASE_URL': JSON.stringify('https://dayz-promo.ru')
   },
   base: '/'
 })
