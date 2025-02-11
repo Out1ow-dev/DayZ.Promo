@@ -12,6 +12,8 @@ services:
       - ASPNETCORE_URLS=http://+:8080
       - BaseUrl=https://dayz-promo.ru
       - ConnectionStrings__DefaultConnection=Host=promocodes.database;Port=5432;Database=promocodes;Username=postgres;Password=postgres
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     expose:
       - "8080"
     networks:
