@@ -63,13 +63,14 @@ services:
     restart: always
 
   promocodes.database:
-    image: postgres:latest
+    image: postgres:13-alpine
     container_name: promocodes.database
     environment:
       - POSTGRES_DB=promocodes
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
       - PGDATA=/var/lib/postgresql/data
+      - POSTGRES_INITDB_ARGS=--wal-segsize=1
     volumes:
       - postgres_data:/var/lib/postgresql/data
     expose:
@@ -82,7 +83,11 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
-    user: root
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+    user: postgres
 
 networks:
   app-network:
@@ -90,3 +95,8 @@ networks:
 
 volumes:
   postgres_data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ${PWD}/postgres-data
