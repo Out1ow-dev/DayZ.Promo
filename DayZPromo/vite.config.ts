@@ -11,14 +11,15 @@ export default defineConfig({
     port: 3000,
     proxy: {
       '/api': {
-        target: 'http://89.104.69.217',
+        target: 'https://dayz-promo.ru',
         changeOrigin: true,
-        secure: false
+        secure: true,
       }
     }
   },
   define: {
     'process.env.VITE_API_URL': JSON.stringify('/api'),
     'process.env.VITE_BASE_URL': JSON.stringify('http://89.104.69.217')
-  }
+  },
+  base: '/'
 })

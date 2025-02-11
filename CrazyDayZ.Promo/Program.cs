@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using DbContext = CrazyDayZ.Promo.Persistence.DbContext;
+using Microsoft.AspNetCore.HttpOverrides;
 
 namespace CrazyDayZ.Promo;
 
@@ -102,6 +103,11 @@ public class Program
             });
         });
 
+        builder.Services.Configure<ForwardedHeadersOptions>(options =>
+        {
+            options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+        });
+
         var app = builder.Build();
 
         // Применяем миграции
@@ -143,6 +149,8 @@ public class Program
         app.UseCors();
         app.UseAuthentication();
         app.UseAuthorization();
+
+        app.UseForwardedHeaders();
 
         app.UseEndpoints(endpoints =>
         {

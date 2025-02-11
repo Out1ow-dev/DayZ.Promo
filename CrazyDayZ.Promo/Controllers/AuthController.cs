@@ -3,6 +3,7 @@ using CrazyDayZ.Promo.Identity;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 
 namespace CrazyDayZ.Promo.Controllers
 {
@@ -12,11 +13,16 @@ namespace CrazyDayZ.Promo.Controllers
     {
         private readonly UserManager<User> _userManager; // Используйте User вместо IdentityUser
         private readonly SignInManager<User> _signInManager;
+        private readonly IConfiguration _configuration;
 
-        public AuthController(UserManager<User> userManager, SignInManager<User> signInManager)
+        public AuthController(
+            UserManager<User> userManager, 
+            SignInManager<User> signInManager,
+            IConfiguration configuration)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _configuration = configuration;
         }
 
         [HttpPost("register")]
@@ -36,6 +42,13 @@ namespace CrazyDayZ.Promo.Controllers
 
                 // Автоматически входим после регистрации
                 await _signInManager.SignInAsync(user, isPersistent: true);
+
+                // Добавляем проверку и форвардинг HTTPS
+                var scheme = Request.Headers["X-Forwarded-Proto"].FirstOrDefault() ?? "http";
+                var host = Request.Headers["X-Forwarded-Host"].FirstOrDefault() ?? Request.Host.Value;
+                
+                Response.Headers.Add("Access-Control-Allow-Origin", $"{scheme}://{host}");
+                Response.Headers.Add("Access-Control-Allow-Credentials", "true");
 
                 return Ok(new { Message = "User registered successfully!" });
             }
@@ -90,6 +103,13 @@ namespace CrazyDayZ.Promo.Controllers
 
                 // Выполняем вход
                 await HttpContext.SignInAsync(IdentityConstants.ApplicationScheme, principal);
+
+                // Добавляем проверку и форвардинг HTTPS
+                var scheme = Request.Headers["X-Forwarded-Proto"].FirstOrDefault() ?? "http";
+                var host = Request.Headers["X-Forwarded-Host"].FirstOrDefault() ?? Request.Host.Value;
+                
+                Response.Headers.Add("Access-Control-Allow-Origin", $"{scheme}://{host}");
+                Response.Headers.Add("Access-Control-Allow-Credentials", "true");
 
                 return Ok(new
                 {
