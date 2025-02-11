@@ -13,7 +13,7 @@ namespace CrazyDayZ.Promo.Extensions
             {
                 // Создаем QR-код с использованием библиотеки QRCoder
                 using var qrGenerator = new QRCodeGenerator();
-                using var qrCodeData = qrGenerator.CreateQrCode(url, QRCodeGenerator.ECCLevel.Q);
+                using var qrCodeData = qrGenerator.CreateQrCode("https://dayz-promo.ru" + url, QRCodeGenerator.ECCLevel.Q);
                 using var qrCode = new PngByteQRCode(qrCodeData);
 
                 // Получаем байты PNG изображения
