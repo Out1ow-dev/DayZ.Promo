@@ -1,0 +1,28 @@
+# Создаем директорию для сертификатов
+mkdir -p nginx/certs
+
+# Создаем файлы сертификатов
+cat > nginx/certs/dayz-promo.ru.crt << 'EOL'
+-----BEGIN CERTIFICATE-----
+MIIHmzCCBoOgAwIBAgIMa+2UiI/kUJKL7p9nMA0GCSqGSIb3DQEBCwUAMFMxCzAJ
+... (содержимое основного сертификата) ...
+-----END CERTIFICATE-----
+
+-----BEGIN CERTIFICATE-----
+MIIEsDCCA5igAwIBAgIQd70OB0LV2enQSdd00CpvmjANBgkqhkiG9w0BAQsFADBM
+... (содержимое промежуточного сертификата) ...
+-----END CERTIFICATE-----
+
+-----BEGIN CERTIFICATE-----
+MIIDXzCCAkegAwIBAgILBAAAAAABIVhTCKIwDQYJKoZIhvcNAQELBQAwTDEgMB4G
+... (содержимое корневого сертификата) ...
+-----END CERTIFICATE-----
+EOL
+
+# Создаем файл приватного ключа
+cat > nginx/certs/dayz-promo.ru.key << 'EOL'
+-----BEGIN RSA PRIVATE KEY-----
+MIIJKAIBAAKCAgEAwalUQC1f2qsH7sBwS3PsShTp/Pxn3+qz83Xwo8s/D0H0Ma1I
+... (содержимое приватного ключа) ...
+-----END RSA PRIVATE KEY-----
+EOL 

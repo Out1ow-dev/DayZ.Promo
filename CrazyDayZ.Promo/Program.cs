@@ -81,10 +81,10 @@ public class Program
             options.Cookie.Name = ".AspNetCore.Identity.Application";
             options.Cookie.HttpOnly = true;
             options.Cookie.SameSite = SameSiteMode.Lax;
-            options.Cookie.SecurePolicy = CookieSecurePolicy.None;
+            options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
             options.ExpireTimeSpan = TimeSpan.FromDays(30);
             options.SlidingExpiration = true;
-            options.Cookie.Domain = "89.104.69.217";
+            options.Cookie.Domain = "dayz-promo.ru";
             options.LoginPath = "/api/Auth/login";
             options.LogoutPath = "/api/Auth/logout";
             options.ReturnUrlParameter = null;
@@ -95,7 +95,7 @@ public class Program
             options.AddDefaultPolicy(builder =>
             {
                 builder
-                    .WithOrigins("http://89.104.69.217")
+                    .WithOrigins("https://dayz-promo.ru")
                     .AllowAnyMethod()
                     .AllowAnyHeader()
                     .AllowCredentials();

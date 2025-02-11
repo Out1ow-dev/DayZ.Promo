@@ -1,5 +1,5 @@
 name: dayz-promo
-version: '3.4'
+version: '3.8'
 
 services:
   backend:
@@ -52,6 +52,7 @@ services:
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/www:/var/www/certbot
       - ./CrazyDayZ.Promo/wwwroot:/app/wwwroot:ro
+      - ./nginx/certs:/etc/nginx/certs:ro
     depends_on:
       - backend
       - frontend
