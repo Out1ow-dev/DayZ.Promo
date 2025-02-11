@@ -1,0 +1,178 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\CrazyDayZ.Promo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4C6A85A7-6C8A-4BDA-9117-548758BC036B}|docker-compose.dcproj|c:\\users\\user\\source\\repos\\crazydayz.promo\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{4C6A85A7-6C8A-4BDA-9117-548758BC036B}|docker-compose.dcproj|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Sdks\\Microsoft.Docker.Sdk\\build\\Microsoft.VisualStudio.Docker.Compose.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C6A85A7-6C8A-4BDA-9117-548758BC036B}|docker-compose.dcproj|c:\\users\\user\\source\\repos\\crazydayz.promo\\docker-compose.override.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{4C6A85A7-6C8A-4BDA-9117-548758BC036B}|docker-compose.dcproj|solutionrelative:docker-compose.override.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{969580AB-0872-42F6-A505-A214129BC1CB}|CrazyDayZ.Promo\\CrazyDayZ.Promo.csproj|c:\\users\\user\\source\\repos\\crazydayz.promo\\crazydayz.promo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{969580AB-0872-42F6-A505-A214129BC1CB}|CrazyDayZ.Promo\\CrazyDayZ.Promo.csproj|solutionrelative:crazydayz.promo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{969580AB-0872-42F6-A505-A214129BC1CB}|CrazyDayZ.Promo\\CrazyDayZ.Promo.csproj|c:\\users\\user\\source\\repos\\crazydayz.promo\\crazydayz.promo\\controllers\\generateimagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{969580AB-0872-42F6-A505-A214129BC1CB}|CrazyDayZ.Promo\\CrazyDayZ.Promo.csproj|solutionrelative:crazydayz.promo\\controllers\\generateimagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{969580AB-0872-42F6-A505-A214129BC1CB}|CrazyDayZ.Promo\\CrazyDayZ.Promo.csproj|c:\\users\\user\\source\\repos\\crazydayz.promo\\crazydayz.promo\\models\\image.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{969580AB-0872-42F6-A505-A214129BC1CB}|CrazyDayZ.Promo\\CrazyDayZ.Promo.csproj|solutionrelative:crazydayz.promo\\models\\image.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{969580AB-0872-42F6-A505-A214129BC1CB}|CrazyDayZ.Promo\\CrazyDayZ.Promo.csproj|c:\\users\\user\\source\\repos\\crazydayz.promo\\crazydayz.promo\\models\\dto\\postimagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{969580AB-0872-42F6-A505-A214129BC1CB}|CrazyDayZ.Promo\\CrazyDayZ.Promo.csproj|solutionrelative:crazydayz.promo\\models\\dto\\postimagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{969580AB-0872-42F6-A505-A214129BC1CB}|CrazyDayZ.Promo\\CrazyDayZ.Promo.csproj|c:\\users\\user\\source\\repos\\crazydayz.promo\\crazydayz.promo\\persistence\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{969580AB-0872-42F6-A505-A214129BC1CB}|CrazyDayZ.Promo\\CrazyDayZ.Promo.csproj|solutionrelative:crazydayz.promo\\persistence\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "docker-compose.override.yml",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\CrazyDayZ.Promo\\docker-compose.override.yml",
+              "RelativeDocumentMoniker": "docker-compose.override.yml",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\CrazyDayZ.Promo\\docker-compose.override.yml",
+              "RelativeToolTip": "docker-compose.override.yml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAswB8AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-02-11T07:11:03.76Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\CrazyDayZ.Promo\\docker-compose.yml",
+              "RelativeDocumentMoniker": "docker-compose.yml",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\CrazyDayZ.Promo\\docker-compose.yml",
+              "RelativeToolTip": "docker-compose.yml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-02-11T07:09:34.748Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Image.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\CrazyDayZ.Promo\\CrazyDayZ.Promo\\Models\\Image.cs",
+              "RelativeDocumentMoniker": "CrazyDayZ.Promo\\Models\\Image.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\CrazyDayZ.Promo\\CrazyDayZ.Promo\\Models\\Image.cs",
+              "RelativeToolTip": "CrazyDayZ.Promo\\Models\\Image.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-10T20:06:37.776Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\CrazyDayZ.Promo\\CrazyDayZ.Promo\\Program.cs",
+              "RelativeDocumentMoniker": "CrazyDayZ.Promo\\Program.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\CrazyDayZ.Promo\\CrazyDayZ.Promo\\Program.cs",
+              "RelativeToolTip": "CrazyDayZ.Promo\\Program.cs",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAAwFwAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-10T19:05:06.915Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GenerateImageController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\CrazyDayZ.Promo\\CrazyDayZ.Promo\\Controllers\\GenerateImageController.cs",
+              "RelativeDocumentMoniker": "CrazyDayZ.Promo\\Controllers\\GenerateImageController.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\CrazyDayZ.Promo\\CrazyDayZ.Promo\\Controllers\\GenerateImageController.cs",
+              "RelativeToolTip": "CrazyDayZ.Promo\\Controllers\\GenerateImageController.cs",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAAwIEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-10T09:22:10.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PostImageDto.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\CrazyDayZ.Promo\\CrazyDayZ.Promo\\Models\\Dto\\PostImageDto.cs",
+              "RelativeDocumentMoniker": "CrazyDayZ.Promo\\Models\\Dto\\PostImageDto.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\CrazyDayZ.Promo\\CrazyDayZ.Promo\\Models\\Dto\\PostImageDto.cs",
+              "RelativeToolTip": "CrazyDayZ.Promo\\Models\\Dto\\PostImageDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-10T18:44:21.579Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DbContext.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\CrazyDayZ.Promo\\CrazyDayZ.Promo\\Persistence\\DbContext.cs",
+              "RelativeDocumentMoniker": "CrazyDayZ.Promo\\Persistence\\DbContext.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\CrazyDayZ.Promo\\CrazyDayZ.Promo\\Persistence\\DbContext.cs",
+              "RelativeToolTip": "CrazyDayZ.Promo\\Persistence\\DbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-10T17:03:33.345Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Microsoft.VisualStudio.Docker.Compose.targets",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Sdks\\Microsoft.Docker.Sdk\\build\\Microsoft.VisualStudio.Docker.Compose.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Sdks\\Microsoft.Docker.Sdk\\build\\Microsoft.VisualStudio.Docker.Compose.targets",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Sdks\\Microsoft.Docker.Sdk\\build\\Microsoft.VisualStudio.Docker.Compose.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Sdks\\Microsoft.Docker.Sdk\\build\\Microsoft.VisualStudio.Docker.Compose.targets",
+              "ViewState": "AgIAAKQBAAAAAAAAAADwv64BAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-02-10T16:52:38.556Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 161,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

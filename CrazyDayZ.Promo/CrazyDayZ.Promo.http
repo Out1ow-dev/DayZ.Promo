@@ -1,0 +1,6 @@
+@CrazyDayZ.Promo_HostAddress = http://localhost:5075
+
+GET {{CrazyDayZ.Promo_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

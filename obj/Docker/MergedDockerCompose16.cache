@@ -1,0 +1,107 @@
+name: dockercompose4321936019722765023
+services:
+  crazydayz.promo:
+    build:
+      context: C:\Users\User\source\repos\CrazyDayZ.Promo\CrazyDayZ.Promo\CrazyDayZ.Promo
+      dockerfile: Dockerfile
+    depends_on:
+      promocodes.database:
+        condition: service_started
+        required: true
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ASPNETCORE_URLS: http://+:8080
+    expose:
+      - "8080"
+    image: crazydayzpromo
+    networks:
+      app-network: null
+    volumes:
+      - type: bind
+        source: C:\Users\User\source\repos\CrazyDayZ.Promo\CrazyDayZ.Promo\CrazyDayZ.Promo\wwwroot
+        target: /app/wwwroot
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\User\AppData\Roaming/Microsoft/UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\User\AppData\Roaming/ASP.NET/Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+  frontend:
+    build:
+      context: C:\Users\User\source\repos\CrazyDayZ.Promo\DayZPromo
+      dockerfile: Dockerfile
+    environment:
+      NODE_ENV: development
+      REACT_APP_API_URL: http://localhost/api
+    networks:
+      app-network: null
+    ports:
+      - mode: ingress
+        target: 3000
+        published: "3000"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\User\source\repos\CrazyDayZ.Promo\DayZPromo
+        target: /app
+        bind:
+          create_host_path: true
+      - type: volume
+        target: /app/node_modules
+        volume: {}
+  nginx:
+    depends_on:
+      crazydayz.promo:
+        condition: service_started
+        required: true
+      frontend:
+        condition: service_started
+        required: true
+    image: nginx:alpine
+    networks:
+      app-network: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "80"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\User\source\repos\CrazyDayZ.Promo\nginx\nginx.conf
+        target: /etc/nginx/nginx.conf
+        read_only: true
+        bind:
+          create_host_path: true
+  promocodes.database:
+    container_name: promocodes.database
+    environment:
+      POSTGRES_DB: promocodes
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+    image: postgres:latest
+    networks:
+      app-network: null
+    ports:
+      - mode: ingress
+        target: 5432
+        published: "5432"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\User\source\repos\CrazyDayZ.Promo\.containers\servers-db
+        target: /var/lib/postgresql/data
+        bind:
+          create_host_path: true
+networks:
+  app-network:
+    name: dockercompose4321936019722765023_app-network
+    driver: bridge

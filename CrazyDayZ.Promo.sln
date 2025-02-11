@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35506.116 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrazyDayZ.Promo", "CrazyDayZ.Promo\CrazyDayZ.Promo.csproj", "{969580AB-0872-42F6-A505-A214129BC1CB}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{4C6A85A7-6C8A-4BDA-9117-548758BC036B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{969580AB-0872-42F6-A505-A214129BC1CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{969580AB-0872-42F6-A505-A214129BC1CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{969580AB-0872-42F6-A505-A214129BC1CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{969580AB-0872-42F6-A505-A214129BC1CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C6A85A7-6C8A-4BDA-9117-548758BC036B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C6A85A7-6C8A-4BDA-9117-548758BC036B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C6A85A7-6C8A-4BDA-9117-548758BC036B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C6A85A7-6C8A-4BDA-9117-548758BC036B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

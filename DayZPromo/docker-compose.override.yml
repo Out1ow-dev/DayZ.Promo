@@ -1,0 +1,46 @@
+services:
+  nginx:
+    ports:
+      - "80:80"
+
+  frontend:
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./DayZPromo:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+
+  crazydayz.promo:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+      - ASPNETCORE_URLS=http://+:8080
+    expose:
+      - "8080"
+    depends_on:
+      - promocodes.database
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+    networks:
+      - app-network
+
+  promocodes.database:
+    image: postgres:latest
+    container_name: promocodes.database
+    environment:
+      - POSTGRES_DB=promocodes
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./.containers/servers-db:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge 

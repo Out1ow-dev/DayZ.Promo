@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - crazydayz.promo
+      - frontend
+    networks:
+      - app-network
+
+  frontend:
+    build:
+      context: ./DayZPromo
+      dockerfile: Dockerfile
+    environment:
+      - REACT_APP_API_URL=http://localhost/api
+    networks:
+      - app-network
+
+  crazydayz.promo:
+    image: ${DOCKER_REGISTRY-}crazydayzpromo
+    build:
+      context: ./CrazyDayZ.Promo/CrazyDayZ.Promo
+      dockerfile: Dockerfile
+    volumes:
+      - ./CrazyDayZ.Promo/CrazyDayZ.Promo/wwwroot:/app/wwwroot
+    networks:
+      - app-network 

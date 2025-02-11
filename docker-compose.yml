@@ -1,0 +1,77 @@
+name: dayz-promo
+version: '3.4'
+
+services:
+  backend:
+    build:
+      context: ./CrazyDayZ.Promo
+      dockerfile: Dockerfile
+    container_name: dayz-backend
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:8080
+      - BaseUrl=http://89.104.69.217
+    expose:
+      - "8080"
+    networks:
+      - app-network
+    restart: always
+    depends_on:
+      - promocodes.database
+    volumes:
+      - ./CrazyDayZ.Promo/wwwroot:/app/wwwroot
+    user: "0:0"
+
+  frontend:
+    build:
+      context: ./DayZPromo
+      dockerfile: Dockerfile
+    container_name: dayz-frontend
+    environment:
+      - NODE_ENV=production
+      - VITE_API_URL=/api
+      - VITE_BASE_URL=http://89.104.69.217
+    expose:
+      - "3000"
+    networks:
+      - app-network
+    restart: always
+    depends_on:
+      - backend
+
+  nginx:
+    image: nginx:alpine
+    container_name: dayz-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+      - ./CrazyDayZ.Promo/wwwroot:/app/wwwroot:ro
+    depends_on:
+      - backend
+      - frontend
+    networks:
+      - app-network
+    restart: always
+
+  promocodes.database:
+    image: postgres:latest
+    container_name: promocodes.database
+    environment:
+      - POSTGRES_DB=promocodes
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./.containers/servers-db:/var/lib/postgresql/data
+    expose:
+      - "5432"
+    networks:
+      - app-network
+    restart: always
+
+networks:
+  app-network:
+    driver: bridge
