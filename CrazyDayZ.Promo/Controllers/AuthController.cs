@@ -27,12 +27,15 @@ namespace CrazyDayZ.Promo.Controllers
                 return BadRequest(ModelState);
             }
 
-            var user = new User { UserName = model.Username }; // Используйте User
+            var user = new User { UserName = model.Username };
             var result = await _userManager.CreateAsync(user, model.Password);
 
             if (result.Succeeded)
             {
                 await _userManager.AddToRoleAsync(user, "User");
+
+                // Автоматически входим после регистрации
+                await _signInManager.SignInAsync(user, isPersistent: true);
 
                 return Ok(new { Message = "User registered successfully!" });
             }
@@ -48,8 +51,17 @@ namespace CrazyDayZ.Promo.Controllers
                 return BadRequest(ModelState);
             }
 
+            // Нормализуем имя пользователя
+            var normalizedUsername = model.Username.ToUpper();
+            var user = await _userManager.FindByNameAsync(model.Username);
+            
+            if (user == null)
+            {
+                return Unauthorized(new { Message = "Invalid username or password" });
+            }
+
             var result = await _signInManager.PasswordSignInAsync(
-                model.Username,
+                user,
                 model.Password,
                 isPersistent: true,
                 lockoutOnFailure: false
@@ -57,28 +69,33 @@ namespace CrazyDayZ.Promo.Controllers
 
             if (result.Succeeded)
             {
-                var user = await _userManager.FindByNameAsync(model.Username);
-                if (user != null)
+                // Проверяем роль пользователя
+                var isAdmin = await _userManager.IsInRoleAsync(user, "Admin");
+                if (!isAdmin)
                 {
-                    // Проверяем роль пользователя
-                    var isAdmin = await _userManager.IsInRoleAsync(user, "Admin");
-                    if (!isAdmin)
-                    {
-                        await _userManager.AddToRoleAsync(user, "Admin");
-                    }
-
-                    await _signInManager.SignInAsync(user, isPersistent: true);
-
-                    // Добавляем заголовки CORS в ответ
-                    Response.Headers.Add("Access-Control-Allow-Credentials", "true");
-                    Response.Headers.Add("Access-Control-Allow-Origin", Request.Headers["Origin"]);
-
-                    return Ok(new
-                    {
-                        Message = "User logged in successfully!",
-                        Username = user.UserName
-                    });
+                    await _userManager.AddToRoleAsync(user, "Admin");
                 }
+
+                // Создаем claims для пользователя
+                var claims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.Name, user.UserName),
+                    new Claim(ClaimTypes.NameIdentifier, user.Id),
+                    new Claim(ClaimTypes.Role, "Admin")
+                };
+
+                // Создаем ClaimsIdentity
+                var identity = new ClaimsIdentity(claims, IdentityConstants.ApplicationScheme);
+                var principal = new ClaimsPrincipal(identity);
+
+                // Выполняем вход
+                await HttpContext.SignInAsync(IdentityConstants.ApplicationScheme, principal);
+
+                return Ok(new
+                {
+                    Message = "User logged in successfully!",
+                    Username = user.UserName
+                });
             }
 
             return Unauthorized(new { Message = "Invalid username or password" });

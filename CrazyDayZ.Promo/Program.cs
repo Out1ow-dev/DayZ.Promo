@@ -76,7 +76,13 @@ public class Program
             });
         });
 
-        builder.Services.ConfigureApplicationCookie(options =>
+        builder.Services.AddAuthentication(options =>
+        {
+            options.DefaultAuthenticateScheme = IdentityConstants.ApplicationScheme;
+            options.DefaultChallengeScheme = IdentityConstants.ApplicationScheme;
+            options.DefaultSignInScheme = IdentityConstants.ApplicationScheme;
+        })
+        .AddCookie(IdentityConstants.ApplicationScheme, options =>
         {
             options.Cookie.Name = ".AspNetCore.Identity.Application";
             options.Cookie.HttpOnly = true;
@@ -87,26 +93,19 @@ public class Program
             options.Cookie.Domain = "89.104.69.217";
             options.LoginPath = "/api/Auth/login";
             options.LogoutPath = "/api/Auth/logout";
+            options.ReturnUrlParameter = null;
         });
 
-        // Обновляем CORS политику
         builder.Services.AddCors(options =>
         {
             options.AddDefaultPolicy(builder =>
             {
                 builder
-                    .SetIsOriginAllowed(_ => true)
+                    .WithOrigins("http://89.104.69.217")
                     .AllowAnyMethod()
                     .AllowAnyHeader()
                     .AllowCredentials();
             });
-        });
-
-        builder.Services.AddAuthentication(options =>
-        {
-            options.DefaultAuthenticateScheme = IdentityConstants.ApplicationScheme;
-            options.DefaultChallengeScheme = IdentityConstants.ApplicationScheme;
-            options.DefaultSignInScheme = IdentityConstants.ApplicationScheme;
         });
 
         var app = builder.Build();
